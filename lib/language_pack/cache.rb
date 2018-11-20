@@ -54,7 +54,7 @@ class LanguagePack::Cache
     return false unless File.exist?(from)
     FileUtils.mkdir_p File.dirname(to)
     cmd = "cp #{options} #{from}/. #{to}"
-    log cmd
+    puts cmd
     system(cmd)
   end
 

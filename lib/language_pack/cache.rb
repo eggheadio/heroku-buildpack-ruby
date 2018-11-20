@@ -53,7 +53,9 @@ class LanguagePack::Cache
   def copy(from, to, options='-a')
     return false unless File.exist?(from)
     FileUtils.mkdir_p File.dirname(to)
-    system("cp #{options} #{from}/. #{to}")
+    cmd = "cp #{options} #{from}/. #{to}"
+    log cmd
+    system(cmd)
   end
 
   # copy contents between to places in the cache
